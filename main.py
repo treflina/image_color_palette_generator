@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024
+app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024
 
 
 def rgb2hex(triplet):
@@ -69,7 +69,7 @@ def palette(filename):
     return render_template("index.html", filename=filename, palette=palette, colors=colors)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
 
 
 # @app.route('/read_file', methods=['GET'])
